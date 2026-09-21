@@ -15,6 +15,32 @@ st.set_page_config(
     }
 )
 
+# 1. 初始化状态
+if "egg_welcome_shown" not in st.session_state:
+    st.session_state.egg_welcome_shown = False
+
+
+# 2. 定义弹窗内容
+@st.dialog("🎉 彩蛋房间！")
+def welcome_dialog():
+    st.write("恭喜你到达此处！")
+    st.write("这是跟着老师第一次接触streamlit时做的")
+    st.write("那么，祝你玩的开心！")
+
+    # 弹窗里的跳转链接
+    st.link_button("返回", "https://icetest-e332jnxmr2nipb896ruhss.streamlit.app/")
+
+    # 关闭弹窗的按钮
+    if st.button("进入房间"):
+        st.session_state.egg_welcome_shown = True
+        st.rerun()
+
+
+# 3. 判断是否弹出
+if not st.session_state.egg_welcome_shown:
+    welcome_dialog()
+    st.session_state.egg_welcome_shown = True
+
 # 大标题
 st.title("Streamlit 入门演示")
 st.header("Streamlit 一级标题")
