@@ -1,4 +1,5 @@
 import streamlit as st
+import streamlit.components.v1 as components
 
 # 设置页面的配置项
 st.set_page_config(
@@ -54,17 +55,18 @@ st.write("现在在学python，教学是在b站找的黑马程序员的课程，
 st.write("好了，现在请静静欣赏我磕的cp与她们的美照")
 
 # 图片
-st.image("resources/sua.png")
-st.image("resources/mizi.png")
-st.image("resources/DayNight.jpg")
+st.image("https://img-reg-ab.imagency.cn/a/272/26/6abfa403e5c18.png")
+st.image("https://img-reg-ab.imagency.cn/a/272/26/6abfa3c570243.png")
+st.image("https://img-reg-ab.imagency.cn/a/272/26/6abfa4d83ae2c.jpg")
 
 # 音频
 st.write("sua单曲")
-st.audio("resources/suaSing.mp3")
+st.audio("https://mp3tourl.com/audio/1790945854231-67d5f143-5413-4e8f-9023-754cc713c318.mp3", format="audio/mp3")
 st.write("mizi单曲")
-st.audio("resources/miziSing.mp3")
+st.audio("https://mp3tourl.com/audio/1790945939558-14dafbac-f421-4c48-92ee-d129da3b9b31.mp3", format="audio/mp3")
 # 视频
-st.video("resources/ZombieStageR1.mp4")
+bilibili_url = "https://player.bilibili.com/player.html?isOutside=true&aid=116815359379487&bvid=BV1km736DE9j&cid=39421870900&p=1"
+components.iframe(bilibili_url, height=500)
 
 # logo
 st.logo("resources/ice.jpg")
@@ -81,10 +83,10 @@ st.table(story)
 
 st.write("两位的歌曲")
 music = {
-    "视频" : ["Prologue 甜梦","Black Sorrow", "Ruler of my heart", "CURE", "Heart", "Witch", "wiege", "BOnBon水母星", "MirroR", "Unknown Till The End", "All In"],
-    "主唱" : ["sua", "mizi", "sua", "sua & mizi", "sua", "mizi", "sua & mizi", "sua", "mizi", "Sua", "Mizi"],
-    "时间": ["2023-04-04", "2024-01-02", "2024-10-01", "2025-04-23", "2025-09-04", "2025-10-08", "2025-11-05", "2026-01-08", "2026-06-26", "2026-09-19", "2026-09-19"],
-    "时长": ["1分48秒", "3分40秒", "4分9秒", "3分13秒", "3分22秒", "4分5秒", "3分4秒", "3分11秒", "5分6秒", "2分10秒", "3分4秒"]
+    "视频" : ["Prologue 甜梦","Black Sorrow", "Ruler of my heart", "CURE", "Heart", "Witch", "wiege", "BOnBon水母星", "MirroR", "Unknown Till The End", "All In", "Sweet Dream(Extended)"],
+    "主唱" : ["sua", "mizi", "sua", "sua & mizi", "sua", "mizi", "sua & mizi", "sua", "mizi", "sua", "mizi", "sua"],
+    "时间": ["2023-04-04", "2024-01-02", "2024-10-01", "2025-04-23", "2025-09-04", "2025-10-08", "2025-11-05", "2026-01-08", "2026-06-26", "2026-09-19", "2026-09-19", "2026-10-02"],
+    "时长": ["1分48秒", "3分40秒", "4分9秒", "3分13秒", "3分22秒", "4分5秒", "3分4秒", "3分11秒", "5分6秒", "2分10秒", "3分4秒", "3分30秒"]
 }
 st.table(music)
 
